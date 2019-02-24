@@ -1,9 +1,11 @@
 function [vermelho,verde,azul,negativo] = Negativo(imagem) % função que retorna mais de um elemento -> [...]
-      
+  
+          
     vermelho = Neg(Banda_r(imagem)); 
     verde = Neg(Banda_g(imagem));
     azul = Neg(Banda_b(imagem));
     negativo = Neg(imagem);
+    
     
     figure
     imshow(vermelho);
@@ -24,7 +26,7 @@ function [vermelho,verde,azul,negativo] = Negativo(imagem) % função que retorn
     figure
     imshow(negativo);
     title("Imagem Negativa");
-      
+     
 end  
 
 %%%%%%%%%%%%Comentários%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

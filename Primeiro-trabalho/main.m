@@ -1,9 +1,10 @@
 
 imagem = imread('flor.jpg');
-%imagem_2 = imread('Shapes.png'); não descomentar, a princípio
+imagem_2 = imread('man.png'); 
+
 
 imagem = uint8(imagem);
-%imagem_2 = uint8(imagem_2); não descomentar, a princípio
+imagem_2 = uint8(imagem_2); 
 
 while true
   disp("\n\n");
@@ -23,13 +24,13 @@ while true
     case 0
       break;
     case 1
-      RgbYiq(imagem);
+      YUV_RGB(imagem);
     case 2
-      Bandas(imagem);
+      Bandas(imagem);     
     case 3
       Negativo(imagem);
-    end
-    
+      
+  end    
 
   end
   
