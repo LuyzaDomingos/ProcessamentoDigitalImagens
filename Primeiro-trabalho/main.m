@@ -1,7 +1,7 @@
 
 imagem = imread('flor.jpg');
 %imagem_2 = imread('Shapes.png'); não descomentar, a princípio
-
+1
 imagem = uint8(imagem);
 %imagem_2 = uint8(imagem_2); não descomentar, a princípio
 
@@ -23,7 +23,7 @@ while true
     case 0
       break;
     case 1
-      RgbYiq(imagem);
+      conversao(imagem);
     case 2
       Bandas(imagem);
     case 3
