@@ -1,4 +1,4 @@
-function green = Banda_g(imagem);
+function green = Banda_g(imagem)
   
   verde = imagem(:, :, 2);
   matriz_nula = zeros( size(imagem,1), size(imagem,2));

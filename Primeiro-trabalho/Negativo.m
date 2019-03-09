@@ -1,11 +1,25 @@
-function [vermelho,verde,azul,negativo] = Negativo(imagem) % função que retorna mais de um elemento -> [...]
+function [vermelho,verde,azul,negativo,yiq] = Negativo(imagem) % função que retorna mais de um elemento -> [...]
   
-          
-    vermelho = Neg(Banda_r(imagem)); 
-    verde = Neg(Banda_g(imagem));
-    azul = Neg(Banda_b(imagem));
+    imagemyiq = YUV(imagem);
+    
+    y =  imagemyiq(:,:,1);
+    i =  imagemyiq(:,:,2);
+    q =  imagemyiq(:,:,3);
+
+    vermelho = cat(3,Neg(MonoR(imagem)),MonoG(imagem),MonoB(imagem));
+    verde = cat(3,MonoR(imagem),Neg(MonoG(imagem)),MonoB(imagem)); 
+    azul = cat(3,MonoR(imagem),MonoG(imagem),Neg(MonoB(imagem)));
+    BandaY = cat(3,Neg(y),i,q);
+    yiq = RGB(BandaY);
     negativo = Neg(imagem);
     
+    figure
+    imshow(imagem);
+    title('Imagem Original');
+    
+    figure
+    imshow(negativo);
+    title("Imagem Negativa");
     
     figure
     imshow(vermelho);
@@ -20,12 +34,10 @@ function [vermelho,verde,azul,negativo] = Negativo(imagem) % função que retorn
     title('negativo - green');
       
     figure
-    imshow(imagem);
-    title('Imagem Original');
+    imshow(BandaY);
+    title('negativo - Banda Y');
     
-    figure
-    imshow(negativo);
-    title("Imagem Negativa");
+    
      
 end  
 

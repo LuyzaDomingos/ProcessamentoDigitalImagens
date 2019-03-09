@@ -3,7 +3,7 @@ function [vermelho,verde,azul] = Bandas(imagem) % função que retorna mais de u
   vermelho = Banda_r(imagem);
   verde = Banda_g(imagem);
   azul = Banda_b(imagem);
-  
+      
   figure
   imshow(vermelho);
   title('Banda-red');

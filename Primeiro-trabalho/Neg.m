@@ -1,4 +1,4 @@
-function negativo = Neg(imagem);
+function negativo = Neg(imagem)
   negativo = 255 - imagem;
  end
  

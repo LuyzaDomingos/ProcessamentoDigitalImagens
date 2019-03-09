@@ -1,10 +1,12 @@
 
 imagem = imread('flor.jpg');
 imagem_2 = imread('man.png'); 
+imagem_3 = imread('108073.png');
 
 
 imagem = uint8(imagem);
 imagem_2 = uint8(imagem_2); 
+imagem_3 = uint8(imagem_3);
 
 while true
   disp("\n\n");
@@ -24,11 +26,25 @@ while true
     case 0
       break;
     case 1
-      YUV_RGB(imagem);
+ imagemyiq = YUV(imagem_2);
+ imagemrgb = RGB(imagemyiq);
+      
+      figure
+      imshow(imagemyiq);
+      title('imagem yiq');
+  
+      figure
+      imshow(imagemrgb);
+      title('rgb');
+      
     case 2
       Bandas(imagem);     
     case 3
       Negativo(imagem);
+    case 4
+      AditivoBanda(imagem_2);
+    case 5
+      MultiplicativoBanda(imagem_2);  
       
   end    
 

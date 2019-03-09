@@ -1,5 +1,5 @@
-function red = Banda_r(imagem);
-  
+function red = Banda_r(imagem)
+ 
  
   vermelho = imagem( :, :,1);
   matriz_nula = zeros( size(imagem,1), size(imagem,2));

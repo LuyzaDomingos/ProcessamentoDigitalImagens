@@ -1,4 +1,4 @@
-function blue = Banda_b(imagem);
+function blue = Banda_b(imagem)
   
   azul = imagem(:, :, 3);
   matriz_nula = zeros( size(imagem,1), size(imagem,2));
