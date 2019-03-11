@@ -1,27 +1,29 @@
-function [red,green,blue] = Bandas(imagem)
+ peanuts
+function [vermelho,verde,azul] = Bandas(imagem) % função que retorna mais de um elemento -> [...]
   
-  vermelho = imagem( :, :,1);
-  verde = imagem(:, :, 2);
-  azul = imagem(:, :, 3);
-  
-  matriz_nula = zeros( size(imagem,1), size(imagem,2));
-  red = cat(3, vermelho,matriz_nula,matriz_nula);
-  green = cat(3,matriz_nula,verde,matriz_nula);
-  blue = cat(3,matriz_nula,matriz_nula,azul);
-  
+  vermelho = Banda_r(imagem);
+  verde = Banda_g(imagem);
+  azul = Banda_b(imagem);
+      
+  figure
+  imshow(vermelho);
+  title('Banda-red');
+  figure
+  imshow(verde);
+  title('Banda- green');
+  figure
+  imshow(azul);
+  title('Banda-blue');
   figure
   imshow(imagem);
-  title('Imagem Original');
-  
-  figure
-  imshow(red);
-  title('Banda-red');
-  
-  figure
-  imshow(green);
-  title('Banda- green');
-  
-  figure
-  imshow(blue);
-  title('Banda-blue');
+  title('Original');
+ 
   end
+
+  
+  
+%%%%%%%%%%%%Comentários%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programa que exibe as bandas da  imagem.            %   
+% E para isso usa as funções específicas Bandas_x(imagem). %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ master
