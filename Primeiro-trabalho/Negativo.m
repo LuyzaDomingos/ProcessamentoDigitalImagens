@@ -1,3 +1,4 @@
+peanuts
 function [vermelho,verde,azul,negativo,yiq] = Negativo(imagem) % função que retorna mais de um elemento -> [...]
   
     imagemyiq = YUV(imagem);
@@ -44,4 +45,6 @@ end
 %%%%%%%%%%%%Comentários%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Programa que exibe o negativo das bandas e da imagem original              %
 % E para isso usa as funções específicas Neg(imagem) e Neg(Bandas_x(imagem)).%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ master

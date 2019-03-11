@@ -1,3 +1,4 @@
+ peanuts
 function [vermelho,verde,azul] = Bandas(imagem) % função que retorna mais de um elemento -> [...]
   
   vermelho = Banda_r(imagem);
@@ -25,3 +26,4 @@ function [vermelho,verde,azul] = Bandas(imagem) % função que retorna mais de u
 % Programa que exibe as bandas da  imagem.            %   
 % E para isso usa as funções específicas Bandas_x(imagem). %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ master
