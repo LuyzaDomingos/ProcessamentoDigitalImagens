@@ -1,4 +1,4 @@
-function [vermelho,verde,azul,origem,yiq] = AditivoBanda(imagem)
+function [vermelho,verde,azul,origem,imagemY] = AditivoBanda(imagem)
   
   valbrilho = input('Defina a quantidade de brilho aditivo : ');
   
@@ -28,38 +28,24 @@ function [vermelho,verde,azul,origem,yiq] = AditivoBanda(imagem)
     
     origem  =  imagem+valbrilho;
     
-    banday = YUV(imagem);
-    y = banday(:,:,1)+valbrilho;
-    i = banday(:,:,2);
-    q = banday(:,:,3);
-    
-    imagemY = cat(3,y,i,q);
-    yiq = RGB(imagemY);
-    
-    
-    figure
-    imshow(origem);
-    title('Brilho aditivo em todo a imagem');
-    
-    figure
-    imshow(imagem);
-    title('Imagem Original');
-    
-    figure
-    imshow(vermelho);
-    title("Brilho aditivo - red");
-    
-    figure
-    imshow(verde);
-    title('Brillho aditivo - green');
+    imagem_normalizada = Normaliza(imagem);
+    imagem_yiq = rgb2yiq(imagem_normalizada);
      
-    figure
-    imshow(azul);
-    title('Brillho aditivo - azul');
+    imagemY = cat(3,imagem_yiq(:,:,1)+valbrilho, imagem_yiq(:,:,2), imagem_yiq(:,:,3));
     
-    figure
-    imshow(yiq);
-    title('Brilho aditivo - BandaY');
+    
+    
+    figure;imshow(origem);title('Brilho aditivo em todo a imagem');
+    
+    figure;imshow(imagem);title('Imagem Original');
+    
+    figure;imshow(vermelho);title("Brilho aditivo - red");
+    
+    figure;imshow(verde);title('Brillho aditivo - green');
+     
+    figure;imshow(azul);title('Brillho aditivo - azul');
+    
+    figure;imshow(yiq2rgb(imagemY));title('Brilho aditivo - BandaY');
     
   
-  end
+  endfunction

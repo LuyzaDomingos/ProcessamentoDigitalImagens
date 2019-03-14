@@ -1,4 +1,4 @@
-function [vermelho,verde,azul,origem] = MultiplicativoBanda(imagem)
+function [vermelho,verde,azul,origem,imagemBandaY] = MultiplicativoBanda(imagem)
   
   valbrilho = input('Defina a quantidade de brilho multiplicativo : ');
   
@@ -28,40 +28,25 @@ function [vermelho,verde,azul,origem] = MultiplicativoBanda(imagem)
     
     origem  =  imagem*valbrilho;
     
-    banday = YUV(imagem);
-    y = banday(:,:,1)*valbrilho;
-    i = banday(:,:,2);
-    q = banday(:,:,3);
-    
-    imagemY = cat(3,y,i,q);
-    yiq = RGB(imagemY);
-    
-    
-    
-    figure
-    imshow(origem);
-    title('Brilho multiplicativo em todo a imagem');
-    
-    figure
-    imshow(imagem);
-    title('Imagem Original');
-    
-    figure
-    imshow(vermelho);
-    title("Brilho multiplicativo - red");
-    
-    figure
-    imshow(verde);
-    title('Brillho multiplicativo - green');
+    imagem_normalizada = Normaliza(imagem);
+    imagem_yiq = rgb2yiq(imagem_normalizada);
+    bandaY = imagem_yiq(:,:,1); 
      
-    figure
-    imshow(azul);
-    title('Brillho multiplicativo - azul');
+    imagemBandaY = cat(3,imagem_yiq(:,:,1)*valbrilho,imagem_yiq(:,:,2),imagem_yiq(:,:,3));
     
-    figure
-    imshow(yiq);
-    title('Brilho multiplicativo - BandaY');
     
+    
+    figure;imshow(origem);title('Brilho multiplicativo - imagem completa');
+    
+    figure;imshow(imagem);title('Imagem Original');
+    
+    figure;imshow(vermelho);title("Brilho multiplicativo - red");
+    
+    figure;imshow(verde);title('Brillho multiplicativo - green');
+     
+    figure;imshow(azul);title('Brillho multiplicativo - azul');
+    
+    figure;imshow(yiq2rgb(imagemBandaY));title('Brilho multiplicativo - BandaY');
     
   
-  end
+  endfunction

@@ -1,8 +1,8 @@
- peanuts
+
 
 imagem = imread('flor.jpg');
 imagem_2 = imread('man.png'); 
-imagem_3 = imread('108073.png');
+imagem_3 = imread('arara.png');
 
 
 imagem = uint8(imagem);
@@ -14,7 +14,7 @@ while true
   disp("Menu");
   disp("0 - Encerrar execução")
   disp("1 - Conversao de imagem (RGB-YIQ_RGB)");
-  disp("2 - Banda individuais(RGB)");
+  disp("2 - Exibição das Bandas - Monocromática ou Colorida");
   disp("3 - Negativo da Imagem");
   disp("4 - Controle de bilho (aditivo)");
   disp("5 - Controle de brilho (multiplicativo)");
@@ -27,29 +27,25 @@ while true
     case 0
       break;
     case 1
- imagemyiq = YUV(imagem_2);
- imagemrgb = RGB(imagemyiq);
-      
-      figure
-      imshow(imagemyiq);
-      title('imagem yiq');
-  
-      figure
-      imshow(imagemrgb);
-      title('rgb');
+      imagem = Normaliza(imagem); % normaliza a imagem
+      imagemyiq = rgb2yiq(imagem);
+      imagemrgb = yiq2rgb(imagemyiq);
+          
+      figure;imshow(imagemyiq);title('imagem yiq');
+      figure;imshow(imagemrgb);title('rgb');
       
     case 2
-      Bandas(imagem);     
+      Bandas(imagem_2);     
     case 3
-      Negativo(imagem);
+      Negativo(imagem_3);
     case 4
       AditivoBanda(imagem_2);
     case 5
       MultiplicativoBanda(imagem_2);  
       
-  end    
+  endswitch    
 
-  end
+  endwhile
   
 
 
@@ -66,4 +62,4 @@ while true
 
 
 
- master
+
