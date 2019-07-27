@@ -23,6 +23,7 @@ endfunction
 %%%%%%%%%%%%Comentários%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Programa que exibe o negativo das bandas                                   %
 %OBS 1: tem que utilizar a banda monocrómatica ou BandaY                     %
-%OBS 2: função imcomplement() - do pacote image - sendo usada temporariamente %  
+%OBS 2: função imcomplement() - do pacote image - sendo usada temporariamente %
+%OBS 3: Tem que fazer load do pkg image para complicar o imcomplement         %       
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

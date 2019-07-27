@@ -1,4 +1,4 @@
-function [vermelho,verde,azul] = Bandas(imagem) % função que retorna mais de um elemento -> [...]
+function [monoR,monoG,monoB,i,vermelho,verde,azul,m] = Bandas(imagem) % função que retorna mais de um elemento -> [...]
   
   
   escolha = input('Escolha a banda que deseja exibir: 1 - Monocrómatica  2 - Coloridas ');
@@ -14,6 +14,8 @@ function [vermelho,verde,azul] = Bandas(imagem) % função que retorna mais de u
       figure;imshow(monoR);title('Banda Monocrómatica - vermelha');
       figure;imshow(monoG);title('Banda Monocrómatica - verde');
       figure;imshow(monoB);title('Banda Monocrómatica - azul');
+      i = cat(3,monoR,monoG,monoB);
+      figure;imshow(i);title('todas monos juntas');
       
     case 2
 %bandas coloridas
@@ -23,7 +25,8 @@ function [vermelho,verde,azul] = Bandas(imagem) % função que retorna mais de u
       figure;imshow(vermelho);title('Banda-red');
       figure;imshow(verde);title('Banda- green');
       figure;imshow(azul);title('Banda-blue')
-     
+      m = cat(3,vermelho,verde,azul);
+      figure;imshow(m);title('tudo junto');
  endswitch  
 
  
