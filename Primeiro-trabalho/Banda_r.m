@@ -8,7 +8,7 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Comentários%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  vermelho está capturando a matriz do primeiro plano referente a imagem(que é o vermelho de RGB)             % 
+%  a variável vermelho está capturando a matriz do primeiro plano referente a imagem(que é o vermelho de RGB)  % 
 % zeros() está preenchendo a matriz com zeros em sua dimensão                                                  %
 % é atribuido a red a concatenação da dimensão (3) dos três planos. Resultando em uma banda de cor vermelho     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,50 +1,29 @@
-peanuts
-function [vermelho,verde,azul,negativo,yiq] = Negativo(imagem) % função que retorna mais de um elemento -> [...]
+function [vermelho,verde,azul,negativo,yiq_imagem] = Negativo(imagem) % função que retorna mais de um elemento -> [...]
   
-    imagemyiq = YUV(imagem);
-    
-    y =  imagemyiq(:,:,1);
-    i =  imagemyiq(:,:,2);
-    q =  imagemyiq(:,:,3);
+    imagem_nor = Normaliza(imagem);
+    imagem_yiq = rgb2yiq(imagem_nor);
 
     vermelho = cat(3,Neg(MonoR(imagem)),MonoG(imagem),MonoB(imagem));
     verde = cat(3,MonoR(imagem),Neg(MonoG(imagem)),MonoB(imagem)); 
     azul = cat(3,MonoR(imagem),MonoG(imagem),Neg(MonoB(imagem)));
-    BandaY = cat(3,Neg(y),i,q);
-    yiq = RGB(BandaY);
+    yiq_imagem = cat(3,imcomplement(imagem_yiq(:,:,1)),imagem_yiq(:,:,2),imagem_yiq(:,:,3));
     negativo = Neg(imagem);
     
-    figure
-    imshow(imagem);
-    title('Imagem Original');
+    figure;imshow(imagem);title('Imagem Original');
+    figure;imshow(negativo);title("Imagem Negativa");
     
-    figure
-    imshow(negativo);
-    title("Imagem Negativa");
-    
-    figure
-    imshow(vermelho);
-    title('negativo - red');
+    figure;imshow(vermelho);title('negativo - Red');
      
-    figure
-    imshow(azul);
-    title('negativo - blue');
-      
-    figure
-    imshow(verde);
-    title('negativo - green');
-      
-    figure
-    imshow(BandaY);
-    title('negativo - Banda Y');
-    
-    
+    figure;imshow(azul);title('negativo - Blue');  
+    figure;imshow(verde);title('negativo - Green');
+    figure;imshow(yiq2rgb(yiq_imagem));title('negativo - BandaY');  
      
-end  
+endfunction  
 
 %%%%%%%%%%%%Comentários%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Programa que exibe o negativo das bandas e da imagem original              %
-% E para isso usa as funções específicas Neg(imagem) e Neg(Bandas_x(imagem)).%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Programa que exibe o negativo das bandas                                   %
+%OBS 1: tem que utilizar a banda monocrómatica ou BandaY                     %
+%OBS 2: função imcomplement() - do pacote image - sendo usada temporariamente %
+%OBS 3: Tem que fazer load do pkg image para complicar o imcomplement         %       
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- master

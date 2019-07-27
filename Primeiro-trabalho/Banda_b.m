@@ -6,7 +6,7 @@ function blue = Banda_b(imagem)
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Comentários%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  azul está capturando a matriz do terceiro plano referente a imagem(que é o azul do RGB)                    %  
+%  a variável azul está capturando a matriz do terceiro plano referente a imagem(que é o azul do RGB)          %  
 % zeros() está preenchendo a matriz com zeros em sua dimensão                                                  %
 % é atribuido a blue a concatenação da dimensão (3) dos três planos. Resultando em uma banda de cor azul       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
